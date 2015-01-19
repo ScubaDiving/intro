@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(){
+int n,sum=0,avg=0,min=0,max=0,i=0;
+
+do{
+	scanf("%d",&n);
+	if(i==0) //check if first iteration
+	{
+	max=n; //initialization - first number is set to be both
+	min=n;
+		if(n==0){
+			  //first input is 0
+        		return printf("Error\n");
+			}
+	}
+	if(n>max)
+		max=n; //MAX
+	if(n<min&&n)
+		min=n; //MIN
+
+	sum+=n;
+	i++; //setting for second iteration and so on
+}while(n!=0);
+i--;
+avg=sum/i;
+printf("The minimal value is: %d\n",min);
+printf("The maximal value is: %d\n",max);
+printf("The average is: %d\n",avg);
+return 0;
+}

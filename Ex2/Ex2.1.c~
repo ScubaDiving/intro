@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(){
+        int flag,reverse=0,tmp,digit,check;
+        double n;
+        //scanf("%d",&n);
+        flag=scanf("%lf\n",&n); //flag will be 1 if input is not int
+        if (n<=0||!flag||n%1!=0) //<0 or char
+          {
+          printf("Error\n");
+          check=1;//shouldnt be calculated
+          return 0; //BREAK
+          }
+        tmp=n;
+        while(tmp!=0)
+        {
+                digit=tmp%10;
+                reverse=reverse*10+digit; //reversing the number
+                tmp/=10;
+                check=0;
+        }
+        if(reverse==n)
+                printf("The number %d is a palindrome\n",n);
+        else
+                printf("The number %d is NOT a palindrome\n",n);
+
+printf("check=%d\n",check);
+return 0;
+}
